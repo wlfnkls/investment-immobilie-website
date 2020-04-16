@@ -1,0 +1,32 @@
+nav {
+  .nav {
+    padding: 20px 0;
+
+    &--elements {
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+      color: $primary;
+      font-weight: 700;
+    }
+
+    &--element {
+      padding: 9px 15px;
+      cursor: pointer;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+      
+      &:hover {
+        background: $primary;
+        color: white;
+        border-radius: 4px;
+      }
+    }
+  }
+}

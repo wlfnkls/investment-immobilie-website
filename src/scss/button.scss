@@ -1,0 +1,14 @@
+button.button {
+  font-weight: 700;
+  font-size: 24px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  padding: 12px 45px;
+
+  &--primary {
+    background: $primary;
+    color: white;
+    cursor: pointer;
+  }
+}
