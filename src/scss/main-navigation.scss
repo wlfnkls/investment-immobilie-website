@@ -14,14 +14,6 @@ nav {
       padding: 9px 15px;
       cursor: pointer;
 
-      &:first-child {
-        padding-left: 0;
-      }
-
-      &:last-child {
-        padding-right: 0;
-      }
-      
       &:hover {
         background: $primary;
         color: white;

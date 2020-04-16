@@ -377,12 +377,6 @@ nav .nav--element {
   padding: 9px 15px;
   cursor: pointer;
 }
-nav .nav--element:first-child {
-  padding-left: 0;
-}
-nav .nav--element:last-child {
-  padding-right: 0;
-}
 nav .nav--element:hover {
   background: #0C7965;
   color: white;
