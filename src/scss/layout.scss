@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 48rem;
+  max-width: 100%;
+  padding-left: 1.6875rem;
+  padding-right: 1.6875rem;
+
+  @media (min-width: 48em) {
+    width: 63.9375rem;
+    padding-left: 4.875rem;
+    padding-right: 4.875rem;
+  }
+
+  @media (min-width: 64em) {
+    width: 89.5rem;
+    padding-left: 7.25rem;
+    padding-right: 7.25rem;
+  }
+}

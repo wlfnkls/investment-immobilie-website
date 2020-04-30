@@ -4,16 +4,17 @@
 @import './main-navigation.scss';
 @import './banner.scss';
 @import './button.scss';
+@import './header.scss';
+@import './layout.scss';
 
 * {
   font-family: 'Catamaran', sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 section.section {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
