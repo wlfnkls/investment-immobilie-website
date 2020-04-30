@@ -4,7 +4,7 @@ import Banner from './components/Banner';
 
 const app = () => {
   document.querySelector('nav.nav').innerHTML = Navigation();
-  document.querySelector('.banner').innerHTML = Banner();
+  document.querySelector('.banner').innerHTML = Banner(document.querySelector('.banner'));
 }
 
 app();

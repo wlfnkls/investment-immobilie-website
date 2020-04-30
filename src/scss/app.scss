@@ -1,20 +1,22 @@
-@import 'normalize.css/normalize.css';
-@import './colors.scss';
-@import './typo.scss';
-@import './main-navigation.scss';
-@import './banner.scss';
-@import './button.scss';
-@import './header.scss';
-@import './layout.scss';
+@import "normalize.css/normalize.css";
+@import "./partials/colors.scss";
+@import "./partials/typo.scss";
+@import "./partials/media.scss";
+@import "./partials/utilities.scss";
+@import "./partials/main-navigation.scss";
+@import "./partials/banner.scss";
+@import "./partials/button.scss";
+@import "./partials/layout.scss";
 
 * {
-  font-family: 'Catamaran', sans-serif;
+  font-family: "Catamaran", sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-section.section {
-  max-width: 1200px;
+img {
+  height: auto;
+  width: 100%;
 }

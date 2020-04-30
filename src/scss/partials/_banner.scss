@@ -1,0 +1,33 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  background-image: url($headerImage);
+
+  @media (min-width: 64em) {
+    flex-direction: row;
+    background-image: none;
+  }
+
+  &--text {
+    margin-bottom: 24px;
+
+    @media (min-width: 64em) {
+      padding: 0;
+      width: 75%;
+      background-color: none;
+    }
+  }
+
+  &--image {
+    display: none;
+    @media (min-width: 64em) {
+      display: block;
+    }
+
+    &__mobile {
+      @media (min-width: 64em) {
+        display: none;
+      }
+    }
+  }
+}
