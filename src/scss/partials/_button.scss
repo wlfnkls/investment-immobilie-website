@@ -5,6 +5,7 @@ button.button {
   outline: none;
   border: none;
   padding: 12px 45px;
+  -webkit-tap-highlight-color: transparent;
 
   &--primary {
     background: $primary;

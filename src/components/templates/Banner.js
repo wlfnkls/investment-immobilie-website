@@ -1,5 +1,4 @@
-import imageCurved from '../images/handshake-header-image-curved.jpg';
-import image from '../images/handshake-header-image.jpg';
+import imageCurved from '../../images/handshake-header-image-curved.jpg';
 
 const Banner = (element) => {
   const template = `

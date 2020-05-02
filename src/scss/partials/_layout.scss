@@ -7,12 +7,21 @@
   padding-left: 1.6875rem;
   padding-right: 1.6875rem;
 
+  /* SM */
+  @media (min-width: 20em) {
+    width: 48rem;
+    padding-left: 1.6875rem;
+    padding-right: 1.6875rem;
+  }
+
+  /* MD */
   @media (min-width: 48em) {
     width: 63.9375rem;
     padding-left: 4.875rem;
     padding-right: 4.875rem;
   }
 
+  /* LG */
   @media (min-width: 64em) {
     width: 89.5rem;
     padding-left: 7.25rem;
