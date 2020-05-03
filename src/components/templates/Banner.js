@@ -1,7 +1,11 @@
 import imageCurved from '../../images/handshake-header-image-curved.jpg';
+import image from '../../images/handshake-header-image.jpg';
 
 const Banner = (element) => {
   const template = `
+    <div class="banner--hero">
+      <img src="${image}" />
+    </div>
     <div class="banner--text">
       <h1 class="h1">${element.getAttribute('data-first-headline')}</h1>
       <h2 class="h2">${element.getAttribute('data-second-headline')}</h2>

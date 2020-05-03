@@ -1,11 +1,25 @@
 .banner {
   display: flex;
   flex-direction: column;
-  background-image: url($headerImage);
+  // background-image: url($headerImage);
 
   @media (min-width: 64em) {
     flex-direction: row;
     background-image: none;
+  }
+
+  &--hero {
+    height: 150px;
+
+    @media (min-width: 64em) {
+      display: none;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   &--text {
