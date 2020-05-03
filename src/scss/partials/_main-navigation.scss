@@ -9,6 +9,7 @@ nav {
 
     .nav {
       &--elements {
+        transform: translateX(25px);
         padding: 20px 15px;
         display: inherit;
         list-style-type: none;

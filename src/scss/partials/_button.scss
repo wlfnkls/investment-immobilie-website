@@ -1,11 +1,15 @@
 button.button {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1rem;
   border-radius: 4px;
   outline: none;
   border: none;
   padding: 12px 45px;
   -webkit-tap-highlight-color: transparent;
+
+  @media (min-width: 48em) {
+    font-size: 1.5rem;
+  }
 
   &--primary {
     background: $primary;
