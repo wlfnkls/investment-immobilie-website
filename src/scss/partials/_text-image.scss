@@ -1,0 +1,31 @@
+.text-image {
+  margin-bottom: 24px;
+  &--content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--image {
+    background-color: rgb(243, 243, 243);
+  }
+
+  &--text {
+    background-color: rgb(243, 243, 243);
+    padding: 1rem;
+
+    p {
+      font-weight: 200;
+    }
+  }
+
+  @media (min-width: 48em) {
+    &--content {
+      flex-direction: row;
+    }
+
+    &--image,
+    &--text {
+      width: 50%;
+    }
+  }
+}
