@@ -2,12 +2,12 @@ import imageCurved from '../images/handshake-header-image-curved.jpg';
 import image from '../images/handshake-header-image.jpg';
 
 const TextImage = (element) => {
+  const headline = element.getAttribute('data-headline');
+  const imageSrc = element.getAttribute('data-img-src');
   const template = `
-    <h2 class="h2">${element.getAttribute('data-headline')}</h2>
+    ${headline ? `<h2 class="h2">${headline}</h2>` : ``}
     <div class="text-image--content">
-      <div class="text-image--image">
-        <img src="https://via.placeholder.com/500x280" alt="bild" />
-      </div>
+    <img class="text-image--image" src="${imageSrc}" alt="bild" />
       <div class="text-image--text">
         <div class="text-image--text__headline"><h3 class="h3">Headline</h3></div>
         <div class="text-image--text__text">
