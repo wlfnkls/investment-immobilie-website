@@ -1,5 +1,7 @@
 nav {
   &.nav__mobile {
+    display: flex;
+    justify-content: flex-end;
     // position: absolute;
     // height: 100%;
     // width: 100%;
@@ -12,25 +14,18 @@ nav {
     &.is-visible {
       .nav--elements {
         transform: translateX(0);
+        box-shadow: -500px 0 500px 500px rgba(0, 0, 0, 0.5);
       }
 
       .button--open-mobile-nav {
-        transform: translateX(272px);
+        transform: translateX(-272px);
       }
     }
-
-    // .wrapper {
-    //   position: absolute;
-    //   height: 100%;
-    //   z-index: 1;
-    //   display: flex;
-    //   height: 100%;
-    // }
 
     .nav--elements {
       position: fixed;
       z-index: 1;
-      transform: translateX(-272px);
+      transform: translateX(272px);
       list-style-type: none;
       background: white;
       width: 17rem;
@@ -68,7 +63,7 @@ nav {
       width: 40px;
       height: 40px;
       margin: 10px 27px;
-      // margin-bottom: 0;
+      z-index: 2;
       cursor: pointer;
       transition: transform 0.2s ease-in-out;
 

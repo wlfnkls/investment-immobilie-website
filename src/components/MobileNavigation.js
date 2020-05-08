@@ -1,12 +1,5 @@
 export const MobileNavigationTemplate = () => {
   const template = `
-    <ul class="nav--elements">
-      <li class="nav--element">Navigation</li>
-      <li class="nav--element"><a href="#">Navigation #1</a></li>
-      <li class="nav--element"><a href="#">Navigation #2</a></li>
-      <li class="nav--element"><a href="#">Navigation #3</a></li>
-      <li class="nav--element"><a href="#">Navigation #4</a></li>
-    </ul>
     <div class="button button--open-mobile-nav">
       <div class="stripes">
         <span></span>
@@ -14,6 +7,13 @@ export const MobileNavigationTemplate = () => {
         <span></span>
       </div>
     </div>
+    <ul class="nav--elements">
+      <li class="nav--element">Navigation</li>
+      <li class="nav--element"><a href="#">Navigation #1</a></li>
+      <li class="nav--element"><a href="#">Navigation #2</a></li>
+      <li class="nav--element"><a href="#">Navigation #3</a></li>
+      <li class="nav--element"><a href="#">Navigation #4</a></li>
+    </ul>
   `;
 
   return template;
