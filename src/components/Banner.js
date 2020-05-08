@@ -4,7 +4,7 @@ import image from '../images/handshake-header-image.jpg';
 const Banner = (element) => {
   const template = `
     <div class="container">
-      <h1 class="h1">${element.getAttribute('data-first-headline')}</h1>
+      <h1 class="h1 mt-0">${element.getAttribute('data-first-headline')}</h1>
       <!-- <div class="banner--hero">
         <img src="${image}" />
       </div> -->
