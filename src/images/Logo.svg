@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 140 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1;">
+    <g transform="matrix(1,0,0,1,-383.178,-119.397)">
+        <g transform="matrix(1.10256,0,0,1.10256,-293.17,-34.4869)">
+            <path d="M736.748,149.177C736.748,145.874 734.067,143.193 730.764,143.193L623.04,143.193C619.737,143.193 617.055,145.874 617.055,149.177L617.055,256.901C617.055,260.204 619.737,262.886 623.04,262.886L730.764,262.886C734.067,262.886 736.748,260.204 736.748,256.901L736.748,149.177Z" style="fill:none;stroke:rgb(12,121,101);stroke-width:7.25px;"/>
+        </g>
+        <g transform="matrix(0.855117,0,0,0.855117,61.496,28.9998)">
+            <g transform="matrix(0.745763,0,0,1.28125,237.91,-76.6971)">
+                <path d="M217.008,206.394L307.545,157.289" style="fill:none;stroke:rgb(12,121,101);stroke-width:10.04px;"/>
+            </g>
+            <g transform="matrix(1.18722,0.0257236,-0.0292184,1.34852,110.942,-106.03)">
+                <path d="M307.545,174.169L344.373,207.161" style="fill:none;stroke:rgb(12,121,101);stroke-width:8.28px;"/>
+            </g>
+            <g transform="matrix(0.626754,0.626754,-0.711907,0.711907,353.601,-118.265)">
+                <path d="M307.545,174.169L344.373,207.161" style="fill:none;stroke:rgb(12,121,101);stroke-width:11.1px;"/>
+            </g>
+            <g transform="matrix(0.626754,0.626754,-0.711907,0.711907,378.006,-118.265)">
+                <path d="M307.545,174.169L344.373,207.161" style="fill:none;stroke:rgb(12,121,101);stroke-width:11.1px;"/>
+            </g>
+            <g transform="matrix(1.39907,0,0,1.20591,207.223,-215.63)">
+                <text x="180.946px" y="383.632px" style="font-family:'BerlinSansFB-Reg', 'Berlin Sans FB', sans-serif;font-size:72px;fill:rgb(12,121,101);">€</text>
+            </g>
+        </g>
+    </g>
+</svg>

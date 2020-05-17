@@ -1,9 +1,14 @@
-import imageCurved from '../images/handshake-header-image-curved.jpg';
-import image from '../images/handshake-header-image.jpg';
 
 const TextImage = (element) => {
+  const images = require('../images/*.jpg');
   const headline = element.getAttribute('data-headline');
-  const imageSrc = element.getAttribute('data-img-src');
+  const imageName = element.getAttribute('data-img-name');
+  let imageSrc = '';
+
+  if (images.hasOwnProperty(imageName)) {
+    imageSrc = images[imageName];
+  }
+
   const template = `
     ${headline ? `<h2 class="h2">${headline}</h2>` : ``}
     <div class="text-image--content">
