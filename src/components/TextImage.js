@@ -1,6 +1,6 @@
 
 const TextImage = (element) => {
-  const images = require('../images/*.jpg');
+  const images = require('../images/small/*.jpg');
   const headline = element.getAttribute('data-headline');
   const imageName = element.getAttribute('data-img-name');
   let imageSrc = '';
@@ -28,3 +28,5 @@ const TextImage = (element) => {
 }
 
 export default TextImage;
+
+// image size: 713x475
