@@ -1,3 +1,5 @@
+import Logo from '../images/Logo.png';
+
 export const MobileNavigationTemplate = () => {
   const template = `
     <div class="button button--open-mobile-nav">

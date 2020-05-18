@@ -3,14 +3,10 @@
   &--content {
     display: flex;
     flex-direction: column;
-  }
-
-  &--image {
     background-color: rgb(243, 243, 243);
   }
 
   &--text {
-    background-color: rgb(243, 243, 243);
     padding: 1rem;
   }
 
@@ -19,8 +15,13 @@
       flex-direction: row;
     }
 
+    &--image {
+      height: 100%;
+    }
+
     &--image,
     &--text {
+      word-wrap: break-word;
       width: 50%;
     }
   }

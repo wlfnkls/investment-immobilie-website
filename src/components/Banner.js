@@ -1,8 +1,7 @@
 const Banner = (element) => {
   const template = `
     <div class="container">
-      <h1 class="h1 mt-0">${element.getAttribute('data-first-headline')}</h1>
-      <h2 class="h2 mt-4">${element.getAttribute('data-second-headline')}</h2>
+      <h2 class="h2 mt-4">${element.getAttribute('data-headline')}</h2>
       <p>
         Wer seine Altersvorsorge mal ganz anders gestalten möchte, fernab von den üblichen
         Durchführungswegen, der darf sich ebenfalls darauf freuen uns und unsere Ideen kennenzulernen.
