@@ -1,10 +1,12 @@
-import Logo from '../images/Logo.png';
+import Logo from '../images/Logo.svg';
 
 const Navigation = () => {
+  console.log(Logo);
+
   const template = `
     <div class="logo">
-      <img class="mb-4" src="${Logo}" alt="investment-immobilie-logo" />
-      <h4 class="h4">Investment - Immobilie</h4>
+      <img src="${Logo}" alt="investment-immobilie-logo" />
+      <!-- <h4 class="h4">Investment - Immobilie</h4> -->
     </div>
     <ul class="nav nav--elements">
       <li class="nav nav--element">Navigation #1</li>

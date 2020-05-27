@@ -2,6 +2,7 @@ nav {
   &.nav__mobile {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     // position: absolute;
     // height: 100%;
     // width: 100%;
@@ -9,6 +10,19 @@ nav {
 
     @media (min-width: 48em) {
       display: none;
+    }
+
+    .logo {
+      margin: 20px 27px;
+      width: 60%;
+
+      @media (min-width: 500px) {
+        width: 80%;
+      }
+
+      img {
+        width: 180px;
+      }
     }
 
     &.is-visible {

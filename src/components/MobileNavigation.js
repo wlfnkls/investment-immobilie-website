@@ -1,7 +1,10 @@
-import Logo from '../images/Logo.png';
+import Logo from '../images/Logo.svg';
 
 export const MobileNavigationTemplate = () => {
   const template = `
+    <div class="logo">
+      <img src="${Logo}" alt="investment-immobilie-logo" />
+    </div>
     <div class="button button--open-mobile-nav">
       <div class="stripes">
         <span></span>
