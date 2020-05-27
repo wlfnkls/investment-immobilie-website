@@ -2,11 +2,11 @@ const Banner = (element) => {
   const template = `
     <div class="container">
       <h2 class="h2 mt-4">${element.getAttribute('data-headline')}</h2>
-      <p>
-        - Rendite- Sicherheit - Transparenz
+      <p class="mb-4">
+        Rendite - Sicherheit- Transparenz 
       </p>
-      <div class="button-row">
-        <button class="button button--secondary mt-4">Kontakt</button>
+      <div class="button-row mt-4 mb-4">
+        <button class="button button--secondary">Kontakt</button>
       </div>
     </div>  
   `;
