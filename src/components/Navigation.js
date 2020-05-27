@@ -1,7 +1,6 @@
 import Logo from '../images/Logo.svg';
 
 const Navigation = () => {
-  console.log(Logo);
 
   const template = `
     <div class="logo">
