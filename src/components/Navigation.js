@@ -4,14 +4,26 @@ const Navigation = () => {
 
   const template = `
     <div class="logo">
-      <img src="${Logo}" alt="investment-immobilie-logo" />
-      <!-- <h4 class="h4">Investment - Immobilie</h4> -->
+      <a href="/index.html">
+        <img src="${Logo}" alt="investment-immobilie-logo" />
+      </a>
     </div>
     <ul class="nav nav--elements">
-      <li class="nav nav--element">Navigation #1</li>
-      <li class="nav nav--element">Navigation #2</li>
-      <li class="nav nav--element">Navigation #3</li>
-      <li class="nav nav--element">Navigation #4</li>
+      <li class="nav nav--element">
+        <a href="/immobilienfinanzierung.html">Immobilien</a>
+      </li>
+      <li class="nav nav--element">
+        <a href="/kapitalanlage.html">Kapital</a>
+      </li>
+      <li class="nav nav--element">
+        <a href="/altersvorsorge.html">Altersvorsorge</a>
+      </li>
+      <li class="nav nav--element">
+        <a href="/konsumentenkredit.html">Konsumentenkredit</a>
+      </li>
+      <li class="nav nav--element">
+        <a href="/about.html">Über uns</a>
+      </li>
     </ul>
   `;
 

@@ -18,6 +18,14 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
 html {
   font-size: 100%;
 }

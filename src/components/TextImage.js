@@ -4,6 +4,7 @@ const TextImage = (element) => {
   const headline = element.getAttribute('data-headline');
   const imageName = element.getAttribute('data-img-name');
   const text = element.getAttribute('data-text');
+  const link = element.getAttribute('data-url');
   let imageSrc = '';
 
   if (images.hasOwnProperty(imageName)) {
@@ -19,7 +20,7 @@ const TextImage = (element) => {
           <p>${text}</p>
         </div>
         <div class="text-image--text__read-more">
-          <a href="#">Lesen Sie hier mehr!</a>
+          <a href="/${link}.html">Lesen Sie hier mehr!</a>
         </div>
       </div>
     </div>

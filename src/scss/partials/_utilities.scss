@@ -24,6 +24,10 @@
       margin-top: calc(1rem);
     }
 
+    &-5 {
+      margin-top: calc(1.5rem);
+    }
+
     &-lg-0 {
       @media (min-width: 64em) {
         margin-top: 0 !important;
@@ -50,6 +54,10 @@
 
     &-4 {
       margin-bottom: calc(1rem);
+    }
+
+    &-5 {
+      margin-bottom: calc(1.5rem);
     }
 
     &-lg-0 {

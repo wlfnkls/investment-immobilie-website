@@ -7,7 +7,9 @@ import TextImage from './components/TextImage';
 const app = () => {
   document.querySelector('nav.nav').innerHTML = Navigation();
   document.querySelector('nav.nav__mobile').innerHTML = MobileNavigationTemplate();
-  document.querySelector('.banner').innerHTML = Banner(document.querySelector('.banner'));
+  if (document.querySelector('.banner')) {
+    document.querySelector('.banner').innerHTML = Banner(document.querySelector('.banner'));
+  }
   document.querySelectorAll('.text-image').forEach(element => {
     element.innerHTML = TextImage(element);
   })
