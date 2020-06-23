@@ -9,6 +9,12 @@
 @import "./partials/button.scss";
 @import "./partials/layout.scss";
 @import "./partials/text-image.scss";
+@import "./partials/footer.scss";
+@import "./partials/impressum.scss";
+
+body {
+  margin-bottom: 75px;
+}
 
 * {
   font-family: "Catamaran", sans-serif;

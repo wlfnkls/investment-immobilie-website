@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import { MobileNavigationTemplate, toggleMobileNavigation } from './components/MobileNavigation';
 import Banner from './components/Banner';
 import TextImage from './components/TextImage';
+import Footer from './components/Footer';
 
 const app = () => {
   document.querySelector('nav.nav').innerHTML = Navigation();
@@ -13,6 +14,7 @@ const app = () => {
   document.querySelectorAll('.text-image').forEach(element => {
     element.innerHTML = TextImage(element);
   })
+  document.querySelector('footer').innerHTML = Footer();
 }
 
 app();
