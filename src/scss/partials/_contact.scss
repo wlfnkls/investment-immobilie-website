@@ -1,0 +1,50 @@
+.contact {
+  form {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 48em) {
+      flex-direction: row;
+    }
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      border: none;
+      padding: 0;
+      width: 100%;
+
+      &:first-child {
+        margin-bottom: 32px;
+      }
+
+      @media (min-width: 48em) {
+        &:first-child {
+          margin-right: 24px;
+          margin-bottom: 0;
+          width: 50%;
+        }
+      }
+    }
+
+    input {
+      border: none;
+      background: $secondary;
+      border-radius: 4px;
+      padding: 8px 18px;
+      color: #333;
+
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+    }
+
+    textarea {
+      background: $secondary;
+      border: none;
+      border-radius: 4px;
+      padding: 18px;
+      color: #333;
+    }
+  }
+}

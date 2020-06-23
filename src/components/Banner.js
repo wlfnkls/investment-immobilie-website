@@ -6,7 +6,7 @@ const Banner = (element) => {
         Rendite - Sicherheit- Transparenz 
       </p>
       <div class="button-row mt-4 mb-4">
-        <button class="button button--secondary">Kontakt</button>
+        <a href="/contact.html" class="button button--secondary">Kontakt</a>
       </div>
     </div>  
   `;
