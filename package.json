@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rm -rf ./development && rm -rf ./.cache && parcel public/*.html --out-dir development -p 3000 --no-cache",
-    "build": "parcel build public/*.html --out-dir dist --public-url ./"
+    "dev": "rm -rf ./development && rm -rf ./.cache && parcel public/*.html public/mail.php --out-dir development -p 3000 --no-cache",
+    "build": "rm -rf ./dist && parcel build public/*.html public/mail.php --out-dir dist --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "sass": "^1.26.3"
   },
   "dependencies": {
+    "jquery": "^3.5.1",
     "normalize.css": "^8.0.1"
   }
 }

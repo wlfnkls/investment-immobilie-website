@@ -7,6 +7,28 @@
       flex-direction: row;
     }
 
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-position: outside;
+      li {
+        list-style-type: none;
+        line-height: 1.4286;
+        margin-top: 12px;
+      }
+
+      &.request-list {
+        list-style-position: inside;
+        li {
+          flex-basis: 50%;
+
+          @media (min-width: 48em) {
+            flex-basis: 100%;
+          }
+        }
+      }
+    }
+
     fieldset {
       display: flex;
       flex-direction: column;
@@ -28,14 +50,65 @@
     }
 
     input {
-      border: none;
-      background: $secondary;
-      border-radius: 4px;
-      padding: 8px 18px;
-      color: #333;
+      &:not([type="submit"]) {
+        border: none;
+        background: $secondary;
+        border-radius: 4px;
+        padding: 8px 18px;
+        color: #333;
+        width: 100%;
+      }
+
+      &[type="radio"],
+      &[type="checkbox"] {
+        display: none;
+
+        &:checked {
+          + label::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            display: block;
+            background: $primary;
+            border-color: $primary;
+            border-radius: 50%;
+            float: left;
+            flex-shrink: 0;
+          } 
+        }
+
+        &:invalid {
+          + label::before {
+            border-color: rgb(238, 57, 57);
+          } 
+        }
+      }
+
+      &[type="submit"] {
+        margin-top: 28px;
+        cursor: pointer;
+      }
 
       &:not(:last-child) {
         margin-bottom: 14px;
+      }
+    }
+
+    label {
+      cursor: pointer;
+      display: flex;
+      justify-self: flex-start;
+    
+      &::before {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        border: 2px solid rgb(160, 160, 160);
+        border-radius: 50%;
+        margin-right: 1rem;
+        float: left;
+        flex-shrink: 0;
       }
     }
 
@@ -45,6 +118,7 @@
       border-radius: 4px;
       padding: 18px;
       color: #333;
+      width: 100%;
     }
   }
 }

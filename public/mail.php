@@ -1,0 +1,152 @@
+<?php
+
+$error = array();
+
+// FIRSTNAME
+if (empty($_POST["firstname"])) {
+    $error[] = "Firstname is required ";
+} else {
+    $firstname = $_POST["firstname"];
+}
+
+// LASTNAME
+if (empty($_POST["lastname"])) {
+  $error[] = "Lastname is required ";
+} else {
+  $lastname = $_POST["lastname"];
+}
+
+// COMPANY
+if (!empty($_POST["company"])) {
+  $company = $_POST["company"];
+}
+
+// STREET
+if (!empty($_POST["street"])) {
+  $street = $_POST["street"];
+}
+
+// LOCATION
+if (!empty($_POST["location"])) {
+  $location = $_POST["location"];
+}
+
+// EMAIL
+if (empty($_POST["email"]) OR !filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
+    $error[] = "Email is required ";
+} else {
+  $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+}
+
+// REQUEST
+if (empty($_POST["request"])) {
+  $error[] = "Request is required ";
+} else {
+  $request = $_POST["request"];
+}
+
+// OBJECT
+if (empty($_POST["object"])) {
+  $error[] = "Object is required ";
+} else {
+  $object = $_POST["object"];
+}
+
+// MESSAGE
+if (empty($_POST["messege"])) {
+    $error[] = "Messege is required ";
+} else {
+    $message = $_POST["messege"];
+}
+
+//Add your email here
+// $EmailTo = "niklas.schellhoeh@gmail.com";
+$EmailTo = "kontakt@investment-immobilie.net";
+$Subject = "Neue Anfrage";
+$SubjectCopy = "Ihre Anfrage an INVESTMENT-IMMOBILIE";
+$headers = "From: Investment-Immobilie <kontakt@investment-immobilie.net>\r\n";
+$headers .= "Content-type: text/html; charset=utf-8";
+
+// prepare email body text
+if(empty($error)) {
+  $BodyHead = "<html><body>";
+  $Body .= $BodyHead;
+  $Body .= "<strong>Name: </strong>";
+  $Body .= $lastname.", ".$firstname;
+  $Body .= "<br />";
+  $Body .= "<strong>Firma: </strong>";
+  $Body .= $company;
+  $Body .= "<br />";
+  $Body .= "<strong>Straße und Hausnummer: </strong>";
+  $Body .= $street;
+  $Body .= "<br />";
+  $Body .= "<strong>PLZ und Ort: </strong>";
+  $Body .= $location;
+  $Body .= "<br />";
+  $Body .= "<strong>Email: </strong>";
+  $Body .= $email;
+  $Body .= "<br />";
+  $Body .= "<strong>Anfrage: </strong>";
+  $Body .= $request;
+  $Body .= "<br />";
+  $Body .= "<br />";
+  $Body .= "<strong>".$object."</strong>";
+  $Body .= "<br />";
+  $Body .= $message;
+  $Body .= "<br />";
+  $Body .= '</body></html>';
+
+
+  $BodyCopy .= $BodyHead;
+  $BodyCopy .= "Hallo ".$firstname." ".$lastname.",";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>Ihre Anfrage hat uns erreicht!</strong>";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "Hier eine Kopie Ihrer Anfrage";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>Name: </strong>";
+  $BodyCopy .= $lastname.", ".$firstname;
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>Firma: </strong>";
+  $BodyCopy .= $company;
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>Straße und Hausnummer: </strong>";
+  $BodyCopy .= $street;
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>PLZ und Ort: </strong>";
+  $BodyCopy .= $location;
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>Email: </strong>";
+  $BodyCopy .= $email;
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>Anfrage: </strong>";
+  $BodyCopy .= $request;
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>".$object."</strong>";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= $message;
+  $BodyCopy .= "<br />";
+  $BodyCopy .= '</body></html>';
+
+
+  // send email
+  $success = mail($EmailTo, $Subject, $Body, $headers);
+  $copy = mail($email, $SubjectCopy, $BodyCopy, $headers);
+
+  $arr = array('success' => $success, 'email' => $email);
+}
+// redirect to success page
+if ($success && empty($error) && $copy){
+  echo json_encode($arr);
+}else{
+  // header('HTTP/1.1 420 This field is required');
+  echo json_encode($error);
+}
+
+?>

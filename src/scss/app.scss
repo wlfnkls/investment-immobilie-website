@@ -12,6 +12,7 @@
 @import "./partials/footer.scss";
 @import "./partials/impressum.scss";
 @import "./partials/contact.scss";
+@import "./partials/notification.scss";
 
 body {
   margin-bottom: 75px;
@@ -23,6 +24,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+input {
+  line-height: normal;
 }
 
 ul {

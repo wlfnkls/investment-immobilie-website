@@ -1,0 +1,31 @@
+.notification {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  transform: translateY(-220px);
+  transition: transform .5s ease-in-out;
+
+  &.visible {
+    transform: translateY(0);
+  }
+
+  p,
+  span {
+    font-size: 20px;
+  }
+
+  &--success {
+    padding: 28px;
+    background: $primary;
+
+    span {
+      font-weight: 700;
+    }
+
+    h2,
+    p {
+      color: white;
+    }
+  }
+}
