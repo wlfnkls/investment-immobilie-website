@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "rm -rf ./development && rm -rf ./.cache && parcel public/*.html public/mail.php --out-dir development -p 3000 --no-cache",
-    "build": "rm -rf ./dist && parcel build public/*.html public/mail.php --out-dir dist --public-url ./"
+    "build": "rm -rf ./dist && parcel build public/*.html public/mail.php --out-dir dist --public-url ./",
+    "clear-dev": "sshpass -p 'Zirkus666' ssh odin@dev-pi.local 'rm -rv /var/www/html/*'",
+    "deploy-dev": "npm run build && npm run clear-dev && sshpass -p 'Zirkus666' scp -rv dist/* odin@dev-pi.local:/var/www/html"
   },
   "repository": {
     "type": "git",

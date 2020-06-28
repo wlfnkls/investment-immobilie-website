@@ -13,17 +13,24 @@
 <body>
   <nav class="nav__mobile"></nav>
   <nav class="nav container"></nav>
-  <div class="notification">
-    <div class="notification--success">
-      <div class="container">
-        <h2 class="h2">Nachricht verschickt!</h2>
-        <p>
-          Ihre Anfrage hat uns erreicht.<br />
-          Eine Kopie wurde an <span></span> geschickt. <br />
-          <br />
-          Wir melden uns zeitnah bei Ihnen, vielen Dank.
-        </p>
-      </div>
+  <div class="notification notification--success">
+    <div class="container">
+      <h2 class="h2">Nachricht verschickt!</h2>
+      <p>
+        Ihre Anfrage hat uns erreicht.<br />
+        Eine Kopie wurde an <span></span> geschickt. <br />
+        <br />
+        Wir melden uns zeitnah bei Ihnen, vielen Dank.
+      </p>
+    </div>
+  </div>
+  <div class="notification notification--error">
+    <div class="container">
+      <h2 class="h2">Fehler!</h2>
+      <p>
+        Es sind folgende Fehler aufgeteten:
+      <ul></ul>
+      </p>
     </div>
   </div>
   <div class="container mb-5">
@@ -35,15 +42,15 @@
   <div class="container contact mb-5">
     <form action="mail.php" method="POST">
       <fieldset name="data">
-        <input type="text" name="firstname" id="firstname" placeholder="Vorname" required>
-        <input type="text" name="lastname" id="lastname" placeholder="Nachname" required>
+        <input type="text" name="firstname" id="firstname" placeholder="Vorname *" required>
+        <input type="text" name="lastname" id="lastname" placeholder="Nachname *" required>
         <input type="text" name="company" id="company" placeholder="Firma">
         <input type="text" name="street" id="street" placeholder="Straße und Hausnummer">
         <input type="text" name="location" id="location" placeholder="PLZ und Ort">
-        <input type="email" name="email" id="email" placeholder="E-Mail" required>
+        <input type="email" name="email" id="email" placeholder="E-Mail *" required>
         <ul class="request-list">
           <li>
-            <input type="radio" name="request" id="finance" required checked>
+            <input type="radio" name="request" id="finance" checked required>
             <label for="finance">Anfrage Finanzierung</label>
           </li>
           <li>
@@ -65,8 +72,8 @@
         </ul>
       </fieldset name="messege">
       <fieldset>
-        <input type="text" name="object" id="object" placeholder="Betreff" required>
-        <textarea name="messege" id="messege" cols="20" rows="12" placeholder="Nachricht" required></textarea>
+        <input type="text" name="object" id="object" placeholder="Betreff *" required>
+        <textarea name="messege" id="messege" cols="20" rows="12" placeholder="Nachricht *" required></textarea>
         <ul>
           <li>
             <input type="checkbox" name="dsgvo" id="dsgvo" required>
@@ -75,8 +82,7 @@
                 der Finanzdienstleistungen der INVESTMENT - IMMOBILIE zu informieren. Ich kann meine Einwilligung
                 jederzeit durch Mitteilung an die INVESTMENT - IMMOBILIE, z.B. durch eine E-Mail an
                 <a href="mailto:kontakt@investment-immobilie.net">kontakt@investment-immobilie.net</a> widerrufen. Für
-                weitere Informationen zum Datenschutz klicken Sie
-                hier.</span></label>
+                weitere Informationen zum Datenschutz klicken Sie <a href="/datenschutz.html">hier</a>.</span></label>
           </li>
         </ul>
         <input class="button button--primary" type="submit" value="Abschicken">

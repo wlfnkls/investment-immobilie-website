@@ -1,9 +1,12 @@
 import '../src/app.js';
 const $ = require("jquery")
 
+const debugging = false;
+
 const $form = $('.contact form');
 const $notification = $('.notification');
 const $notificationSuccess = $('.notification--success');
+const $notificationError = $('.notification--error');
 
 // const dsgvo = $form.find('input[name="dsgvo"]');
 // const submitBtn = $form.find('input[type="submit"]');
@@ -22,12 +25,15 @@ function submitForm() {
   const label = $("label[for='" + requestId + "']").text();
 
   form_data.append('request', label);
+  form_data.append('dsgvo_accepted', document.getElementById("dsgvo").checked);
 
-  // Display the key/value pairs
-  // for (var pair of form_data.entries()) {
-  //   console.log(pair[0] + ', ' + pair[1]);
-  // }
-  // console.log('SUBMITTING');
+  if (debugging) {
+    // Display the key / value pairs
+    for (var pair of form_data.entries()) {
+      console.log(pair[0] + ', ' + pair[1]);
+    }
+    console.log('SUBMITTING');
+  }
 
   $.ajax({
     type: 'POST',
@@ -38,23 +44,33 @@ function submitForm() {
   })
     .done(function (res) {
       let resJSON = JSON.parse(res);
-      console.log('RES', resJSON);
+
+      if (debugging) console.log('RES', resJSON);
 
       if (resJSON.success) {
         // TODO empty form!
         $notificationSuccess.find('span').text(resJSON.email);
-        $notification.addClass('visible');
+        $notificationSuccess.addClass('visible');
         window.setTimeout(function () {
-          $notification.removeClass('visible');
+          $notificationSuccess.removeClass('visible');
         }, 10000)
       } else {
-        let err = $.parseJSON(res);
-        err.forEach(el => {
+        resJSON.error.forEach(el => {
           console.log('ERROR', el);
 
-          // errorList.append(`<ul>${el}</ul>`);
-          // that.errorBox.show();
+          $notificationError.find('.container ul').append(`<li>${el}</li>`);
+          $notificationError.addClass('visible');
+
+          window.setTimeout(function () {
+            $notificationError.removeClass('visible');
+            $notificationError.find('.container ul').empty();
+          }, 10000)
         })
       }
+    })
+    .fail(function (xhr, status, error) {
+      console.log('ERROR', xhr);
+      console.log('ERROR', status);
+      console.log('ERROR', error);
     })
 }

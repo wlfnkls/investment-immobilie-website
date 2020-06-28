@@ -4,14 +4,14 @@ $error = array();
 
 // FIRSTNAME
 if (empty($_POST["firstname"])) {
-    $error[] = "Firstname is required ";
+  $error[] = "Vorname darf nicht leer sein!";
 } else {
     $firstname = $_POST["firstname"];
 }
 
 // LASTNAME
 if (empty($_POST["lastname"])) {
-  $error[] = "Lastname is required ";
+  $error[] = "Nachname darf nicht leer sein!";
 } else {
   $lastname = $_POST["lastname"];
 }
@@ -33,35 +33,44 @@ if (!empty($_POST["location"])) {
 
 // EMAIL
 if (empty($_POST["email"]) OR !filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
-    $error[] = "Email is required ";
+  $error[] = "Email darf nicht leer sein oder ist falsch formatiert!";
 } else {
   $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
 }
 
 // REQUEST
 if (empty($_POST["request"])) {
-  $error[] = "Request is required ";
+  $error[] = "Anfragegrund darf nicht leer sein!";
 } else {
   $request = $_POST["request"];
 }
 
 // OBJECT
 if (empty($_POST["object"])) {
-  $error[] = "Object is required ";
+  $error[] = "Betreff darf nicht leer sein!";
 } else {
   $object = $_POST["object"];
 }
 
 // MESSAGE
 if (empty($_POST["messege"])) {
-    $error[] = "Messege is required ";
+  $error[] = "Nachricht darf nicht leer sein!";
 } else {
     $message = $_POST["messege"];
 }
 
+// DSGVO
+if (empty($_POST["dsgvo"]) OR !isset($_POST["dsgvo"])) {
+  $error[] = "Sie müssen den Datenschutzbestimmungen zustimmen!";
+} else {
+  $dsgvo = $_POST["dsgvo"];
+}
+
+
+
 //Add your email here
-// $EmailTo = "niklas.schellhoeh@gmail.com";
-$EmailTo = "kontakt@investment-immobilie.net";
+$EmailTo = "niklas.schellhoeh@gmail.com";
+// $EmailTo = "kontakt@investment-immobilie.net";
 $Subject = "Neue Anfrage";
 $SubjectCopy = "Ihre Anfrage an INVESTMENT-IMMOBILIE";
 $headers = "From: Investment-Immobilie <kontakt@investment-immobilie.net>\r\n";
@@ -134,19 +143,19 @@ if(empty($error)) {
   $BodyCopy .= "<br />";
   $BodyCopy .= '</body></html>';
 
-
-  // send email
+// send email
   $success = mail($EmailTo, $Subject, $Body, $headers);
   $copy = mail($email, $SubjectCopy, $BodyCopy, $headers);
 
   $arr = array('success' => $success, 'email' => $email);
 }
-// redirect to success page
-if ($success && empty($error) && $copy){
+
+
+// TODO redirect to success page
+if ($success && empty($error) && $copy) {
   echo json_encode($arr);
-}else{
-  // header('HTTP/1.1 420 This field is required');
-  echo json_encode($error);
+} else {
+  echo json_encode(array('success' => false, 'error' => $error));
 }
 
 ?>
