@@ -18,12 +18,13 @@ $form.submit(function (event) {
 });
 
 function submitForm() {
-  // const form_data = form.serialize();
+  const $lodaingAnimation = $('.loading');
   const form = $('form')[0];
   const form_data = new FormData(form);
   const requestId = $('input[name="request"]:checked')[0].id;
   const label = $("label[for='" + requestId + "']").text();
 
+  $lodaingAnimation.addClass('active');
   form_data.append('request', label);
   form_data.append('dsgvo_accepted', document.getElementById("dsgvo").checked);
 
@@ -48,13 +49,16 @@ function submitForm() {
       if (debugging) console.log('RES', resJSON);
 
       if (resJSON.success) {
-        // TODO empty form!
+        $lodaingAnimation.removeClass('active');
+        $('form')[0].reset();
+        window.scrollTo(0, 0);
         $notificationSuccess.find('span').text(resJSON.email);
         $notificationSuccess.addClass('visible');
         window.setTimeout(function () {
           $notificationSuccess.removeClass('visible');
         }, 10000)
       } else {
+        $lodaingAnimation.removeClass('active');
         resJSON.error.forEach(el => {
           console.log('ERROR', el);
 
@@ -69,8 +73,17 @@ function submitForm() {
       }
     })
     .fail(function (xhr, status, error) {
-      console.log('ERROR', xhr);
-      console.log('ERROR', status);
-      console.log('ERROR', error);
+      $lodaingAnimation.removeClass('active');
+      console.error('ERROR', xhr);
+      console.error('ERROR', status);
+      console.error('ERROR', error);
+      $notificationError.find('.container ul').append(`<li><strong>${xhr.status}</strong>: ${error}</li>`);
+      window.scrollTo(0, 0);
+      $notificationError.addClass('visible');
+
+      window.setTimeout(function () {
+        $notificationError.removeClass('visible');
+        $notificationError.find('.container ul').empty();
+      }, 10000)
     })
 }

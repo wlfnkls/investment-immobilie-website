@@ -76,8 +76,13 @@ $headers .= "Content-type: text/html";
 
 // prepare email body text
 if(empty($error)) {
-  $BodyHead = "<html><body style='font-size:16px;'>";
+  $BodyHead = "<!DOCTYPE html lang='de'><head><meta charset='UTF-8' /></head><html><body style='font-size:16px;'>";
+  $BodyImg = "<img src='https://drive.google.com/uc?export=view&id=1wAIJ8fVkux5vewMFAyHFXEO35KRzYtSZ' alt='Logo' title='Logo' style='display:block' width='250' height='auto' />";
   $Body .= $BodyHead;
+  $Body .= "<br />";
+  $Body .= $BodyImg;
+  $Body .= "<br />";
+  $Body .= "<br />";
   $Body .= "<strong>Name: </strong>";
   $Body .= $lastname.", ".$firstname;
   $Body .= "<br />";
@@ -106,8 +111,7 @@ if(empty($error)) {
 
   $BodyCopy .= $BodyHead;
   $BodyCopy .= "<br />";
-  $BodyCopy .= "<img src='https://drive.google.com/uc?export=view&id=1wAIJ8fVkux5vewMFAyHFXEO35KRzYtSZ' alt='Logo' title='Logo' style='display:block' width='400' height='auto' />";
-  $BodyCopy .= "<br />";
+  $BodyCopy .= $BodyImg;
   $BodyCopy .= "<br />";
   $BodyCopy .= "<br />";
   $BodyCopy .= "<strong>Hallo ".$firstname." ".$lastname.",</strong>";
