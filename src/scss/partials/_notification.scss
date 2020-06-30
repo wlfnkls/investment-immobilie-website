@@ -1,0 +1,46 @@
+.notification {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  transform: translateY(-100%);
+  transition: transform .25s ease-in-out;
+  box-shadow: 0 2px 10px 5px rgba(0, 0, 0, 0);
+
+  &.visible {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  p,
+  span {
+    font-size: 20px;
+  }
+
+  &.notification--success,
+  &.notification--error {
+    padding: 28px;
+
+    span {
+      font-weight: 700;
+    }
+
+    h2,
+    p, ul {
+      color: white;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-top: 12px;
+    }
+  }
+
+  &.notification--error {
+    background: rgb(238, 57, 57);
+  }
+
+  &.notification--success {
+    background: $primary;
+  }
+}

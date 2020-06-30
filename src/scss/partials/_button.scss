@@ -1,0 +1,48 @@
+button.button,
+a.button,
+input.button {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  padding: 8px 25px;
+  cursor: pointer;
+  box-shadow: 0 5px 2px 2px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 48em) {
+    font-size: 1.25rem;
+  }
+
+  &--primary {
+    background: $primary;
+    color: white;
+  }
+
+  &--secondary {
+    background: $secondary;
+    color: $primary;
+
+    &__bordered {
+      color: $secondary;
+      background: none;
+      border: 2px solid $secondary;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 4px 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+  }
+}
+
+a.button {
+  // padding: 2px 25px;
+  text-decoration: none;
+  outline: none;
+}
+
+a {
+  outline: none;
+}

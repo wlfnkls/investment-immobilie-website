@@ -1,0 +1,18 @@
+.impressum,
+.datenschutz,
+.contact {
+    .indent {
+        padding-left: 24px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $primary;
+        font-weight: 700;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}

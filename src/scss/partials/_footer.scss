@@ -1,0 +1,30 @@
+footer {
+    background: $primary;
+    padding: 12px 0;
+    margin-top: 1.5rem;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    line-height: normal;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+
+        span {
+            color: white;
+            margin: 0 8px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}

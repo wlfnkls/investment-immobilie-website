@@ -1,0 +1,72 @@
+@import "normalize.css/normalize.css";
+@import "./partials/colors.scss";
+@import "./partials/typo.scss";
+@import "./partials/media.scss";
+@import "./partials/utilities.scss";
+@import "./partials/main-navigation.scss";
+@import "./partials/mobile-navigation.scss";
+@import "./partials/banner.scss";
+@import "./partials/button.scss";
+@import "./partials/layout.scss";
+@import "./partials/text-image.scss";
+@import "./partials/footer.scss";
+@import "./partials/impressum.scss";
+@import "./partials/contact.scss";
+@import "./partials/notification.scss";
+@import "./partials/loading-animation";
+
+body {
+  margin-bottom: 75px;
+}
+
+* {
+  font-family: "Catamaran", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-touch-callout: initial;
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  line-height: normal;
+}
+
+a {
+  &:active,
+  &:hover,
+  &:focus {
+    outline: 0;
+    border: 0;
+    outline:none;
+  }
+  &::-moz-focus-inner
+  {
+      outline: none;
+      border-color: transparent;
+      border: 0
+  }
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+html {
+  font-size: 100%;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}

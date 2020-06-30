@@ -1,0 +1,107 @@
+nav {
+  &.nav__mobile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    // position: absolute;
+    // height: 100%;
+    // width: 100%;
+    // z-index: 1;
+
+    @media (min-width: 64em) {
+      display: none;
+    }
+
+    .logo {
+      margin: 20px 27px;
+      margin-right: auto;
+
+      @media (min-width: 48em) {
+        margin-left: 78px;
+      }
+
+      // width: 70%;
+
+      // @media (min-width: 500px) {
+      //   width: 70%;
+      // }
+
+      img {
+        width: 280px;
+      }
+    }
+
+    &.is-visible {
+      .nav--elements {
+        transform: translateX(0);
+        box-shadow: -500px 0 500px 500px rgba(0, 0, 0, 0.5);
+      }
+
+      .button--open-mobile-nav {
+        transform: translateX(-272px);
+      }
+    }
+
+    .nav--elements {
+      position: fixed;
+      z-index: 1;
+      transform: translateX(272px);
+      list-style-type: none;
+      background: white;
+      width: 17rem;
+      height: 100%;
+      color: $primary;
+      transition: transform 0.2s ease-in-out;
+      top: 0;
+
+      .nav--element {
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.25);
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 1.25rem;
+
+        a {
+          text-decoration: none;
+          color: $primary;
+        }
+
+        &:first-child {
+          color: white;
+          background: $primary;
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .button--open-mobile-nav {
+      transform: translateX(0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary;
+      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+      margin: 10px 27px;
+      z-index: 2;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+      position: absolute;
+      top: 15px;
+      right: 0;
+
+      .stripes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 55%;
+        height: 75%;
+
+        span {
+          border: 1px solid white;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}

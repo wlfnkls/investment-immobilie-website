@@ -1,0 +1,43 @@
+.text-image {
+  margin-bottom: 24px;
+  &--content {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(243, 243, 243);
+  }
+
+  &--text {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    &__read-more {
+      // margin-top: auto;
+      a {
+        color: $primary;
+        text-decoration: none;
+        font-weight: 700;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 48em) {
+    &--content {
+      flex-direction: row;
+    }
+
+    &--image {
+      height: 100%;
+    }
+
+    &--image,
+    &--text {
+      word-wrap: break-word;
+      width: 50%;
+    }
+  }
+}
