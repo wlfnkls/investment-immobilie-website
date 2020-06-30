@@ -66,19 +66,17 @@ if (empty($_POST["dsgvo"]) OR !isset($_POST["dsgvo"])) {
   $dsgvo = $_POST["dsgvo"];
 }
 
-
-
 //Add your email here
 $EmailTo = "niklas.schellhoeh@gmail.com";
 // $EmailTo = "kontakt@investment-immobilie.net";
 $Subject = "Neue Anfrage";
 $SubjectCopy = "Ihre Anfrage an INVESTMENT-IMMOBILIE";
 $headers = "From: Investment-Immobilie <kontakt@investment-immobilie.net>\r\n";
-$headers .= "Content-type: text/html; charset=utf-8";
+$headers .= "Content-type: text/html";
 
 // prepare email body text
 if(empty($error)) {
-  $BodyHead = "<html><body>";
+  $BodyHead = "<html><body style='font-size:16px;'>";
   $Body .= $BodyHead;
   $Body .= "<strong>Name: </strong>";
   $Body .= $lastname.", ".$firstname;
@@ -107,11 +105,15 @@ if(empty($error)) {
 
 
   $BodyCopy .= $BodyHead;
-  $BodyCopy .= "Hallo ".$firstname." ".$lastname.",";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<img src='https://drive.google.com/uc?export=view&id=1wAIJ8fVkux5vewMFAyHFXEO35KRzYtSZ' alt='Logo' title='Logo' style='display:block' width='400' height='auto' />";
   $BodyCopy .= "<br />";
   $BodyCopy .= "<br />";
-  $BodyCopy .= "<strong>Ihre Anfrage hat uns erreicht!</strong>";
   $BodyCopy .= "<br />";
+  $BodyCopy .= "<strong>Hallo ".$firstname." ".$lastname.",</strong>";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "<br />";
+  $BodyCopy .= "Ihre Anfrage hat uns erreicht!";
   $BodyCopy .= "<br />";
   $BodyCopy .= "Hier eine Kopie Ihrer Anfrage";
   $BodyCopy .= "<br />";

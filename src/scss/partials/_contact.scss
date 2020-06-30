@@ -87,6 +87,7 @@
       &[type="submit"] {
         margin-top: 28px;
         cursor: pointer;
+        outline: none;
       }
 
       &:not(:last-child) {
