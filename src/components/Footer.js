@@ -18,12 +18,12 @@ const Footer = (element) => {
             <span>Die Ideenschmiede der Finanzdienstleistung</span>
           </p>
           <ul class="footer--nav">
-              <li><a href="/datenschutz.html">Home</a></li>
-              <li><a href="/impressum.html">Immobilien</a></li>
-              <li><a href="/impressum.html">Kapital</a></li>
-              <li><a href="/impressum.html">Altersvorsorge</a></li>
-              <li><a href="/impressum.html">Konsumkredit</a></li>
-              <li><a href="/impressum.html">Über uns</a></li>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/immobilienfinanzierung.html">Immobilien</a></li>
+              <li><a href="/kapitalanlage.html">Kapital</a></li>
+              <li><a href="/altersvorsorge.html">Altersvorsorge</a></li>
+              <li><a href="/konsumentenkredit.html">Konsumkredit</a></li>
+              <li><a href="/about.html">Über uns</a></li>
           </ul>
         </div>
       </div>
