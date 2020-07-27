@@ -5,8 +5,11 @@ import Banner from './components/Banner';
 import TextImage from './components/TextImage';
 import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
+import Blog from './components/Blog';
 
 const app = () => {
+  const blogContainer = document.getElementById('blog-container');
+
   if (document.querySelector('.loading')) {
     document.querySelector('.loading').innerHTML = LoadingAnimation();
   }
@@ -19,6 +22,10 @@ const app = () => {
     element.innerHTML = TextImage(element);
   })
   document.querySelector('footer').innerHTML = Footer();
+
+  if (blogContainer) {
+    new Blog(blogContainer);
+  }
 }
 
 app();

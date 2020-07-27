@@ -30,5 +30,3 @@ const TextImage = (element) => {
 }
 
 export default TextImage;
-
-// image size: 713x475
