@@ -1,21 +1,105 @@
 footer {
     background: $primary;
     padding: 12px 0;
-    margin-top: 1.5rem;
-    position: fixed;
+    // margin-top: 1.5rem;
+    position: absolute;
     bottom: 0;
-    height: 50px;
+    height: 240px;
     width: 100%;
     line-height: normal;
+
+    @media (min-width: 64em) {
+      height: 110px;
+    }
+
+    p {
+      color: white;
+      line-height: 1.2;
+    }
+
+    .slogan {
+
+      span {
+        display: block;
+      }
+
+      &--headline {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }  
+    }
+
+    .elements {
+      display: flex;
+      flex-direction: column;
+      
+      @media (min-width: 64em) {
+        justify-content: space-between;
+        flex-direction: row;
+      }
+
+      .element {
+        span.copyright {
+          line-height: 1;
+        }
+
+        &:first-child {
+          order: 1;
+  
+          @media (min-width: 64em) {
+            order: 0;
+          }
+        }
+
+        &:last-child {
+          @media (min-width: 64em) {
+            text-align: end;
+          }
+        }
+      }
+    }
+
+    .footer {
+      &--credits {
+
+        li {
+          font-weight: 700;
+
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
+        }
+      }
+      &--nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        line-height: 1;
+        margin-bottom: 12px;
+
+        @media (min-width: 64em) {
+          margin-bottom: 0;
+        }
+
+        li {
+          margin-bottom: 4px;
+          font-weight: 700;
+          flex-basis: 33%;
+
+          @media (min-width: 64em) {
+            flex-basis: auto;
+          }
+
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
+        }
+      }
+    }
 
     ul {
         list-style-type: none;
         display: flex;
-
-        span {
-            color: white;
-            margin: 0 8px;
-        }
     }
 
     a {
