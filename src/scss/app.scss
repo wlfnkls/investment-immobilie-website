@@ -16,7 +16,17 @@
 @import "./partials/loading-animation";
 
 body {
-  margin-bottom: 75px;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+main {
+  padding-bottom: 240px;
+
+  @media (min-width: 64em) {
+    padding-bottom: 110px;
+  }
 }
 
 * {
