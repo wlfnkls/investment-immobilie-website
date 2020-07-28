@@ -5,7 +5,7 @@ import Banner from './components/Banner';
 import TextImage from './components/TextImage';
 import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
-import CookieHint from './components/CookieHint';
+import { CookieConsent, CookieConsentHandling } from './components/CookieConsent';
 
 const app = () => {
   if (document.querySelector('.loading')) {
@@ -19,10 +19,10 @@ const app = () => {
   document.querySelectorAll('.text-image').forEach(element => {
     element.innerHTML = TextImage(element);
   })
+  document.getElementById('cookie-consent').innerHTML = CookieConsent();
   document.querySelector('footer').innerHTML = Footer();
 }
 
-const cookieHint = new CookieHint();
-
 app();
 toggleMobileNavigation();
+CookieConsentHandling();
