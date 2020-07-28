@@ -26,14 +26,12 @@ export const CookieConsentHandling = () => {
 
   consentCookiesBtn.addEventListener('click', (ev) => {
     setCookie(true);
-    checkCookie();
     hideCookieHint();
     loadGAonConsent();
   });
 
   declineCookiesBtn.addEventListener('click', (ev) => {
     setCookie(false);
-    checkCookie();
     hideCookieHint();
   });
 }
@@ -42,21 +40,25 @@ const setCookie = function (consentCookie) {
   var d = new Date();
   d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
   var expires = "expires=" + d.toUTCString();
-  document.cookie = `consentCookies=${consentCookie}; path=/; ${expires}; secure`;
-
+  document.cookie = "consentCookies=" + consentCookie + "; " + expires + ";";
 }
 
 const checkCookie = function () {
   const cookies = decodeURIComponent(document.cookie);
   const consentCookies = cookies.split(';');
 
-  if (consentCookies.indexOf('consentCookies=true') !== -1) {
+
+  if (document.cookie.split(';').filter(function (item) {
+    return item.indexOf('consentCookies=true') >= 0
+  }).length) {
     loadGAonConsent();
   }
 
-  if (consentCookies.indexOf('consentCookies=true') !== -1 || consentCookies.indexOf('consentCookies=false') !== -1) {
-    hideCookieHint();
-  }
+  consentCookies.forEach(e => {
+    if (e === 'consentCookies=true' || e === 'consentCookies=false') {
+      hideCookieHint();
+    }
+  })
 }
 
 const hideCookieHint = function () {
