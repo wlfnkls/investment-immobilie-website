@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 export const CookieConsent = () => {
   const template = `
     <div class="container">
@@ -37,10 +39,12 @@ export const CookieConsentHandling = () => {
 }
 
 const setCookie = function (consentCookie) {
-  var d = new Date();
-  d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = "consentCookies=" + consentCookie + "; " + expires + ";";
+  Cookies.set('consentCookies', consentCookie, { expires: 365 });
+
+  // var d = new Date();
+  // d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+  // var expires = "expires=" + d.toUTCString();
+  // document.cookie = "consentCookies=" + consentCookie + "; " + expires + ";";
 }
 
 const checkCookie = function () {
