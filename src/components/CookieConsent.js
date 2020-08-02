@@ -48,21 +48,32 @@ const setCookie = function (consentCookie) {
 }
 
 const checkCookie = function () {
-  const cookies = decodeURIComponent(document.cookie);
-  const consentCookies = cookies.split(';');
+  // const cookies = decodeURIComponent(document.cookie);
+  // const consentCookies = cookies.split(';');
 
+  const consentCookies = Cookies.get('consentCookies');
 
-  if (document.cookie.split(';').filter(function (item) {
-    return item.indexOf('consentCookies=true') >= 0
-  }).length) {
+  console.log('consentCookies', consentCookies);
+  
+  if (consentCookies === 'true' || consentCookies === 'false') {
+    hideCookieHint();
+  }
+
+  if (consentCookies === 'true') {
     loadGAonConsent();
   }
 
-  consentCookies.forEach(e => {
-    if (e === 'consentCookies=true' || e === 'consentCookies=false') {
-      hideCookieHint();
-    }
-  })
+  // if (document.cookie.split(';').filter(function (item) {
+  //   return item.indexOf('consentCookies=true') >= 0
+  // }).length) {
+  //   loadGAonConsent();
+  // }
+
+  // consentCookies.forEach(e => {
+  //   if (e === 'consentCookies=true' || e === 'consentCookies=false') {
+  //     hideCookieHint();
+  //   }
+  // })
 }
 
 const hideCookieHint = function () {
