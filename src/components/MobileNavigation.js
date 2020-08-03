@@ -17,7 +17,7 @@ export const MobileNavigationTemplate = () => {
     <ul class="nav--elements">
       <li class="nav--element">Navigation</li>
       <li class="nav nav--element">
-        <a href="/immobilienfinanzierung.html">Immobilien</a>
+        <a href="/immobilienfinanzierung.html">Finanzierung</a>
       </li>
       <li class="nav nav--element">
         <a href="/kapitalanlage.html">Kapital</a>

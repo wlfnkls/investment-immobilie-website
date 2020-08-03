@@ -10,7 +10,7 @@ const Navigation = () => {
     </div>
     <ul class="nav nav--elements">
       <li class="nav nav--element">
-        <a href="/immobilienfinanzierung.html">Immobilien</a>
+        <a href="/immobilienfinanzierung.html">Finanzierung</a>
       </li>
       <li class="nav nav--element">
         <a href="/kapitalanlage.html">Kapital</a>
