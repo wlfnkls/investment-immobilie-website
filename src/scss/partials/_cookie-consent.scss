@@ -15,8 +15,11 @@
   }
 
   position: fixed;
-  bottom: 32px;
   right: 32px;
+  bottom: calc(32px + 240px);
+  @media (min-width: 48em) {
+    bottom: calc(32px + 110px);
+  }
   background-color: white;
   box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.25);
 
