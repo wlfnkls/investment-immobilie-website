@@ -19,12 +19,8 @@ const app = () => {
   document.querySelectorAll('.text-image').forEach(element => {
     element.innerHTML = TextImage(element);
   })
-<<<<<<< HEAD
   document.getElementById('cookie-consent').innerHTML = CookieConsent();
-  document.querySelector('footer').innerHTML = Footer();
-=======
   // document.querySelector('footer').innerHTML = Footer();
->>>>>>> hotfix/nav-html
 }
 
 app();
