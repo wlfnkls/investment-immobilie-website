@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 export const CookieConsent = () => {
   const template = `
     <div class="container">
@@ -37,28 +39,41 @@ export const CookieConsentHandling = () => {
 }
 
 const setCookie = function (consentCookie) {
-  var d = new Date();
-  d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = "consentCookies=" + consentCookie + "; " + expires + ";";
+  Cookies.set('consentCookies', consentCookie, { expires: 365 });
+
+  // var d = new Date();
+  // d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+  // var expires = "expires=" + d.toUTCString();
+  // document.cookie = "consentCookies=" + consentCookie + "; " + expires + ";";
 }
 
 const checkCookie = function () {
-  const cookies = decodeURIComponent(document.cookie);
-  const consentCookies = cookies.split(';');
+  // const cookies = decodeURIComponent(document.cookie);
+  // const consentCookies = cookies.split(';');
 
+  const consentCookies = Cookies.get('consentCookies');
 
-  if (document.cookie.split(';').filter(function (item) {
-    return item.indexOf('consentCookies=true') >= 0
-  }).length) {
+  console.log('consentCookies', consentCookies);
+  
+  if (consentCookies === 'true' || consentCookies === 'false') {
+    hideCookieHint();
+  }
+
+  if (consentCookies === 'true') {
     loadGAonConsent();
   }
 
-  consentCookies.forEach(e => {
-    if (e === 'consentCookies=true' || e === 'consentCookies=false') {
-      hideCookieHint();
-    }
-  })
+  // if (document.cookie.split(';').filter(function (item) {
+  //   return item.indexOf('consentCookies=true') >= 0
+  // }).length) {
+  //   loadGAonConsent();
+  // }
+
+  // consentCookies.forEach(e => {
+  //   if (e === 'consentCookies=true' || e === 'consentCookies=false') {
+  //     hideCookieHint();
+  //   }
+  // })
 }
 
 const hideCookieHint = function () {

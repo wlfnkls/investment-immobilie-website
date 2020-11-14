@@ -1,5 +1,5 @@
 import './scss/app.scss';
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 import { MobileNavigationTemplate, toggleMobileNavigation } from './components/MobileNavigation';
 import Banner from './components/Banner';
 import CarestoneVideo from './components/CarestoneVideo';
@@ -12,8 +12,8 @@ const app = () => {
   if (document.querySelector('.loading')) {
     document.querySelector('.loading').innerHTML = LoadingAnimation();
   }
-  document.querySelector('nav.nav').innerHTML = Navigation();
-  document.querySelector('nav.nav__mobile').innerHTML = MobileNavigationTemplate();
+  // document.querySelector('nav.nav').innerHTML = Navigation();
+  // document.querySelector('nav.nav__mobile').innerHTML = MobileNavigationTemplate();
   if (document.querySelector('.banner')) {
     document.querySelector('.banner').innerHTML = Banner(document.querySelector('.banner'));
   }
@@ -21,11 +21,11 @@ const app = () => {
     element.innerHTML = TextImage(element);
   })
   document.getElementById('cookie-consent').innerHTML = CookieConsent();
-  document.querySelector('footer').innerHTML = Footer();
 
   if (document.getElementById('carestone-video')) {
     document.getElementById('carestone-video').innerHTML = CarestoneVideo();
   }
+  // document.querySelector('footer').innerHTML = Footer();
 }
 
 app();
