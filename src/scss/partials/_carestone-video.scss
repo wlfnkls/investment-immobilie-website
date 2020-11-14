@@ -1,19 +1,30 @@
 #carestone-video {
-  .video-container {
-    max-width: 500px;
-    position: relative;
+  a {
+    display: inline-block;
 
-    .play-icon-container {
-      position: absolute;
-      height: 98.5%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, .5);
+    .video-container {
+      max-width: 500px;
+      position: relative;
+      overflow: hidden;
 
-      img.play-icon {
+      .play-icon-container {
         position: absolute;
-        width: 100px;
-        right: calc(50% - 50px);
-        top: calc(50% - 50px);
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        transform: scale(1);
+        transition: transform .1s ease-in-out,
+                    background-color .1s ease-in-out;
+      }
+    }
+
+    &:hover {
+      .play-icon-container {
+        background-color: rgba(0, 0, 0, .75);
+        transform: scale(1.1);
       }
     }
   }
