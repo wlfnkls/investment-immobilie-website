@@ -2,6 +2,7 @@ import './scss/app.scss';
 import Navigation from './components/Navigation';
 import { MobileNavigationTemplate, toggleMobileNavigation } from './components/MobileNavigation';
 import Banner from './components/Banner';
+import CarestoneVideo from './components/CarestoneVideo';
 import TextImage from './components/TextImage';
 import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
@@ -21,6 +22,10 @@ const app = () => {
   })
   document.getElementById('cookie-consent').innerHTML = CookieConsent();
   document.querySelector('footer').innerHTML = Footer();
+
+  if (document.getElementById('carestone-video')) {
+    document.getElementById('carestone-video').innerHTML = CarestoneVideo();
+  }
 }
 
 app();

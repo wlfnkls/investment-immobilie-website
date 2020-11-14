@@ -1,0 +1,20 @@
+#carestone-video {
+  .video-container {
+    max-width: 500px;
+    position: relative;
+
+    .play-icon-container {
+      position: absolute;
+      height: 98.5%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .5);
+
+      img.play-icon {
+        position: absolute;
+        width: 100px;
+        right: calc(50% - 50px);
+        top: calc(50% - 50px);
+      }
+    }
+  }
+}
