@@ -83,3 +83,15 @@ img {
   width: 100%;
   vertical-align: top;
 }
+
+.image-container {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+
+  img.profile-pic {
+    width: auto;
+    height: 100%;
+  }
+}
