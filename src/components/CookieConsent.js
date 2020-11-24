@@ -40,20 +40,10 @@ export const CookieConsentHandling = () => {
 
 const setCookie = function (consentCookie) {
   Cookies.set('consentCookies', consentCookie, { expires: 365 });
-
-  // var d = new Date();
-  // d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
-  // var expires = "expires=" + d.toUTCString();
-  // document.cookie = "consentCookies=" + consentCookie + "; " + expires + ";";
 }
 
 const checkCookie = function () {
-  // const cookies = decodeURIComponent(document.cookie);
-  // const consentCookies = cookies.split(';');
-
-  const consentCookies = Cookies.get('consentCookies');
-
-  console.log('consentCookies', consentCookies);
+ const consentCookies = Cookies.get('consentCookies');
   
   if (consentCookies === 'true' || consentCookies === 'false') {
     hideCookieHint();
@@ -62,18 +52,6 @@ const checkCookie = function () {
   if (consentCookies === 'true') {
     loadGAonConsent();
   }
-
-  // if (document.cookie.split(';').filter(function (item) {
-  //   return item.indexOf('consentCookies=true') >= 0
-  // }).length) {
-  //   loadGAonConsent();
-  // }
-
-  // consentCookies.forEach(e => {
-  //   if (e === 'consentCookies=true' || e === 'consentCookies=false') {
-  //     hideCookieHint();
-  //   }
-  // })
 }
 
 const hideCookieHint = function () {

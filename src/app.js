@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import LoadingAnimation from './components/LoadingAnimation';
 import { CookieConsent, CookieConsentHandling } from './components/CookieConsent';
 
+import './functions/foreach-polyfill';
+
 const app = () => {
   if (document.querySelector('.loading')) {
     document.querySelector('.loading').innerHTML = LoadingAnimation();
