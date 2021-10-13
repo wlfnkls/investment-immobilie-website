@@ -67,8 +67,8 @@ if (empty($_POST["dsgvo"]) OR !isset($_POST["dsgvo"])) {
 }
 
 //Add your email here
-$EmailTo = "niklas.schellhoeh@gmail.com";
-// $EmailTo = "kontakt@investment-immobilie.net";
+// $EmailTo = "niklas.schellhoeh@gmail.com";
+$EmailTo = "kontakt@investment-immobilie.net";
 $Subject = "Neue Anfrage";
 $SubjectCopy = "Ihre Anfrage an INVESTMENT-IMMOBILIE";
 $headers = "From: Investment-Immobilie <kontakt@investment-immobilie.net>\r\n";
